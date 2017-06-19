@@ -1,5 +1,7 @@
 <html>
 <body>
-salam
+<?php
+echo "jjbbj";
+?>
 </body>
 </html>
