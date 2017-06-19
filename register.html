@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://beyamooz.com/try_it_yourself/bootstrap/bootstrap-rtl.min_.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="bootstrap-slider.css">
+    <script type="text/javascript" src = "bootstrap-slider.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //window.location.hash = '#tries';
+        var key_map = [];
+
+        // numbers
+        for(var i=48;i<58;i++)
+            key_map[i] = String.fromCharCode(i);
+        //English alephabet
+        for(var i=65;i<91;i++)
+            key_map[i] = String.fromCharCode(i);
+        //Strange keys
+        key_map[192] ="mad";
+        key_map[189] ="minus";
+        key_map[187] ="eqv";
+        key_map[8]   ="backspace";
+        key_map[9]   ="tab";
+        key_map[219] ="open_bracket";
+        key_map[221] ="close_bracket";
+        key_map[220] ="back_slash";
+        key_map[20] ="caps_lock";
+        key_map[59] ="semicolon";
+        key_map[222] ="apostrophe";
+        key_map[13] ="enter";
+        key_map[16] ="shift";
+        key_map[188] ="comma";
+        key_map[190] ="dot";
+        key_map[191] ="slash";
+        key_map[17] ="ctrl";
+        key_map[18] ="alt";
+        key_map[32] ="space";
+        key_map[20] ="caps_lock";
+        $(document).ready(function(){
+            $("#golakh").keydown( function(key)
+            {
+                var isShift;
+                if (window.event) 
+                {
+                    isShift = !!window.event.shiftKey; // typecast to boolean
+                } 
+                else 
+                {
+                    isShift = !!key.shiftKey;
+                }
+
+                if ( isShift ) 
+                {
+                    console.log( "SHIFT" );
+                }
+
+
+                console.log( key.which );
+                var id = "#key_" + key_map[ key.which ];
+                console.log( id );
+                $(id).removeClass( "key_shape" ).addClass( "key_shape_pressed" );
+                return false;
+            });
+
+            $("#golakh").keyup(function(key)
+            {
+                var id = "#key_" + key_map[ key.which ];
+                $(id).removeClass( "key_shape_pressed" ).addClass( "key_shape" );  
+                return false;
+            });
+        })
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+	formatter: function(value) {
+		return 'Current value: ' + value;
+	}
+});
+    </script>
+
+
+    <style type="text/css">
+    	#rank_row:hover{
+    		background-color:rgba(227,240,252,1) !important;
+    	}
+    </style>
+
+
+
+    <style>
+        *
+        {
+            font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+        }
+
+        .key_container
+        {
+            height:98%;
+            width:43px;
+            float:left;
+        }
+
+        .key_shape
+        {
+            border-radius: 3px; 
+            box-shadow: 3px 3px 6px 0px #111;
+            border:1px solid black;
+            width:36px;
+            height:85%;
+            background-color:black;
+            color:white;
+            text-align:center;
+            font-size:16px;
+            transition-duration: 100ms;
+        }
+
+        .key_shape_pressed
+        {
+            border-radius: 3px; 
+            box-shadow: 1px 1px 3px 0px #811;
+            border:1px solid #811;
+            width:35px;
+            height:83%;
+            margin-top:1px;
+            margin-left:1px;
+            background-color:#c22;
+            color:white;
+            text-align:center;
+            font-size:15px;
+            transition-duration: 100ms;
+        }
+
+        .key
+        {
+            padding-top:6px;
+            font-weight: bold;
+        }
+
+        .row
+        {
+            margin:10px 0px 0px 0px !important;
+        }
+        #ex1Slider .slider-selection {
+	background: #BABABA;
+}
+    </style>
+</head>
+    <body style="background-color:#DADFE1; padding-bottom:25px;">
+
+	<div class="row" style=" height:100%; width:100%; top:0px; left:0px;">
+        <div class="col-sm-3" style="height:60px;margin:0 auto 0 auto;box-shadow: -6px 2px 4px #b6b3b3;background-color:#f2f2f2;">
+            
+        </div>
+        <div class="col-sm-6" style="margin-bottom:5px;box-shadow: -6px 2px 4px #b6b3b3;background-color:#f2f2f2;height:60px;margin:0 auto 0 auto;padding: 0px;">
+         </div>
+        <div class="col-sm-3" style="height:60px;margin:0 auto 0 auto;box-shadow: -6px 2px 4px #b6b3b3;background-color:#f2f2f2;">
+            
+        </div>
+    </div>
+    <div class="row" style="height:100%; width:100%;">
+        <div class="col-sm-3">
+            
+        </div>
+        <div class="col-sm-6" style="padding:5px;margin-bottom:5px;box-shadow: -6px 2px 4px #b6b3b3;background-color:#f2f2f2;height:100%;margin:0 auto 0 auto;padding: 0px;text-align: left;direction: ltr">
+        	<div style="margin:10px">
+        	For register you must send the information to this email : farazazadi1374@yahoo.com <br>
+        	1 - codeforces <b>handle</b> (if exists)<br>
+        	2 - uva <b>id</b> (if exists)<br>
+        	3 - your image<br>
+         	</div>
+         </div>
+        <div class="col-sm-3">
+            
+        </div>
+    </div>s
+
+
+
+
+
+
+
+
+    </body>
+</html>
